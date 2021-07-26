@@ -1,17 +1,17 @@
-package com.example.composefirstexample.components
+package com.example.composefirstexample.components.state
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Text
-import androidx.compose.material.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.LiveData
@@ -97,13 +97,13 @@ class HelloViewModel : ViewModel() {
 }
 
 @Composable
-fun HelloScreen2(helloViewModel: HelloViewModel) {
+fun HelloScreen4(helloViewModel: HelloViewModel) {
     // by default, viewModel() follows the Lifecycle as the Activity or Fragment
     // that calls HelloScreen(). This lifecycle can be modified by callers of HelloScreen.
 
     // name is the current value of [helloViewModel.name]
     // with an initial value of ""
-    val name by helloViewModel.name.observeAsState("")
+    val name: String by helloViewModel.name.observeAsState("")
     HelloContent4(name = name, onNameChange = { helloViewModel.onNameChange(it) })
 }
 

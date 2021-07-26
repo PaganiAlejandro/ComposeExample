@@ -12,6 +12,9 @@ import com.example.composefirstexample.recycler.Content
 import com.example.composefirstexample.recycler.MyApp
 
 class MainActivity : ComponentActivity() {
+
+   lateinit var viewModel: HelloViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -19,13 +22,15 @@ class MainActivity : ComponentActivity() {
 //                Content()
 //            }
 
-            //createSectionsHome()
+            createSectionsHome()
 
            // SimpleList()
 
           //  LazyList()
 
-            HelloScreen()
+            //HelloScreen()
+
+            //HelloScreen4(viewModel)
         }
     }
 }

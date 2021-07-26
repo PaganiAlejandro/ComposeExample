@@ -12,18 +12,6 @@ import androidx.compose.ui.text.input.KeyboardType
 
 
 @Composable
-fun SimpleList() {
-    val scrollState = rememberScrollState()
-
-    Column(modifier = Modifier.verticalScroll(scrollState)) {
-        repeat(100) {
-           Text("Item #$it")
-        }
-    }
-}
-
-
-@Composable
 fun LazyList() {
     // We save the scrolling position with this state that can also
     // be used to programmatically scroll the list
