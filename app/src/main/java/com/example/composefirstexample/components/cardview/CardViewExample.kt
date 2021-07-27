@@ -21,11 +21,16 @@ import androidx.compose.ui.unit.sp
  */
 
 @Composable
-fun CardViewDemo(){
-    Card(elevation = 8.dp,backgroundColor = Color.Gray,modifier = Modifier.padding(16.dp)){
-        Column(modifier = Modifier.wrapContentWidth().padding(8.dp)) {
-            Text("This is a Card",style = TextStyle(textAlign = TextAlign.Center,fontSize = 26.sp))
-            for(number in 0..5){
+fun CardViewExample() {
+    Card(elevation = 8.dp, backgroundColor = Color.Gray, modifier = Modifier.padding(16.dp)) {
+        Column(modifier = Modifier
+            .wrapContentWidth()
+            .padding(8.dp)) {
+            Text(
+                "This is a Card",
+                style = TextStyle(textAlign = TextAlign.Center, fontSize = 26.sp)
+            )
+            for (number in 0..5) {
                 Text(text = "This is number $number")
             }
         }
@@ -35,5 +40,5 @@ fun CardViewDemo(){
 @Preview(showBackground = true)
 @Composable
 private fun PreviewCard(){
-    CardViewDemo()
+    CardViewExample()
 }

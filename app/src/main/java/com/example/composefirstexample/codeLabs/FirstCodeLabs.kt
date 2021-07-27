@@ -1,4 +1,4 @@
-package com.example.composefirstexample.recycler
+package com.example.composefirstexample.codeLabs
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.foundation.background

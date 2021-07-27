@@ -11,7 +11,7 @@ import androidx.compose.ui.tooling.preview.Preview
  */
 
 @Composable
-fun DividerDemo(){
+fun DividerExample(){
     Column {
         Text(text = "One")
         Divider()
@@ -26,5 +26,5 @@ fun DividerDemo(){
 @Preview(showBackground = true)
 @Composable
 private fun DividerDemoPreview(){
-    DividerDemo()
+    DividerExample()
 }

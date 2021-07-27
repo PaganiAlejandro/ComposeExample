@@ -20,7 +20,7 @@ import com.example.composefirstexample.ui.theme.ComposeFirstExampleTheme
  */
 
 @Composable
-fun BoxDemo(){
+fun BoxExample(){
     Box(modifier = Modifier.fillMaxSize(),contentAlignment = Alignment.Center){
         ComposeFirstExampleTheme(true, { Unit })
         CircularProgressIndicator()
@@ -31,7 +31,7 @@ fun BoxDemo(){
 @Preview(showBackground = true)
 @Composable
 private fun BoxDemoPreview(){
-    BoxDemo()
+    BoxExample()
 }
 
 
