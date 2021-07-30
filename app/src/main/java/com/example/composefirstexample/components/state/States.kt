@@ -1,5 +1,6 @@
 package com.example.composefirstexample.components.state
 
+import androidx.activity.viewModels
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
@@ -14,11 +15,13 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-// FIRST STEP
+// Without state ------------------------------------------------------
+
 @Composable
 fun HelloContent1() {
     Column(modifier = Modifier.padding(16.dp)) {
@@ -35,7 +38,9 @@ fun HelloContent1() {
     }
 }
 
-// SECOND STEP
+
+// With remember state ------------------------------------------------------
+
 @Composable
 fun HelloContent2() {
     Column(modifier = Modifier.padding(16.dp)) {
@@ -55,11 +60,12 @@ fun HelloContent2() {
     }
 }
 
-//
+
+// With rememberSaveable and raising the status ----------------------------
+
 @Composable
 fun HelloScreen() {
     var name by rememberSaveable { mutableStateOf("") }
-
     HelloContent3(name = name, onNameChange = { name = it })
 }
 
@@ -80,29 +86,20 @@ fun HelloContent3(name: String, onNameChange: (String) -> Unit) {
 }
 
 
-//four steps
+//With rememberSaveable and raising the status to the viewModel -------------
 
 class HelloViewModel : ViewModel() {
 
-    // LiveData holds state which is observed by the UI
-    // (state flows down from ViewModel)
     private val _name = MutableLiveData("")
     val name: LiveData<String> = _name
 
-    // onNameChange is an event we're defining that the UI can invoke
-    // (events flow up from UI)
     fun onNameChange(newName: String) {
         _name.value = newName
     }
 }
 
 @Composable
-fun HelloScreen4(helloViewModel: HelloViewModel) {
-    // by default, viewModel() follows the Lifecycle as the Activity or Fragment
-    // that calls HelloScreen(). This lifecycle can be modified by callers of HelloScreen.
-
-    // name is the current value of [helloViewModel.name]
-    // with an initial value of ""
+fun HelloScreen2(helloViewModel: HelloViewModel) {
     val name: String by helloViewModel.name.observeAsState("")
     HelloContent4(name = name, onNameChange = { helloViewModel.onNameChange(it) })
 }
@@ -121,4 +118,24 @@ fun HelloContent4(name: String, onNameChange: (String) -> Unit) {
             label = { Text("Name") }
         )
     }
+}
+
+
+@Preview
+@Composable
+fun previewStatesExample(){
+    HelloContent1()
+}
+
+@Preview
+@Composable
+fun previewStatesExample2(){
+    HelloContent2()
+
+}
+
+@Preview
+@Composable
+fun previewStatesExample3(){
+    HelloScreen()
 }

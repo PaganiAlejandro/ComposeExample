@@ -10,8 +10,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @Composable
-private fun NamesListExample(names: List<String> = listOf("1","2","3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"), modifier: Modifier = Modifier) {
-    LazyColumn(modifier = modifier) {
+fun LazyColumExample(names: List<String> = listOf("1","2","3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15")) {
+    LazyColumn(modifier = Modifier.padding(5.dp)) {
         items(items = names) { name ->
             GreetingExample(name = name)
             Divider(color = MaterialTheme.colors.primaryVariant)
@@ -29,9 +29,8 @@ fun GreetingExample(name: String) {
     )
 }
 
-
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    NamesListExample()
+    LazyColumExample()
 }

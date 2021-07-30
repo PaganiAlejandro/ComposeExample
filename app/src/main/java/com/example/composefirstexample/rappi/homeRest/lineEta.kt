@@ -1,4 +1,4 @@
-package com.example.composefirstexample.homeRest
+package com.example.composefirstexample.rappi.homeRest
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*

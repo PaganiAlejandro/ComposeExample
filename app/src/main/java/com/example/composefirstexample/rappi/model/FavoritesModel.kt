@@ -1,4 +1,4 @@
-package com.example.composefirstexample.model
+package com.example.composefirstexample.rappi.model
 
 data class FavoritesModel(
     val storeName: String,

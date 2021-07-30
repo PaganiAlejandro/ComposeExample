@@ -74,7 +74,7 @@ fun Counter(count: Int, updateCount: (Int) -> Unit){
             backgroundColor = if (count > 5) Color.Blue else Color.Cyan
         )
     ) {
-        Text("He sido puklsado $count veces" )
+        Text("He sido pulsado $count veces" )
     }
 
 }

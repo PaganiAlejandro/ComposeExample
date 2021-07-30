@@ -1,4 +1,4 @@
-package com.example.composefirstexample.homeRest
+package com.example.composefirstexample.rappi.homeRest
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
@@ -11,14 +11,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.composefirstexample.R
-import com.example.composefirstexample.data.favoritesHome
-import com.example.composefirstexample.data.storesListFinal
+import com.example.composefirstexample.rappi.data.favoritesHome
+import com.example.composefirstexample.rappi.data.storesListFinal
 
 @Composable
 fun createSectionsHome() {
-    val storeList by lazy {
-        storesListFinal
-    }
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -32,7 +29,7 @@ fun createSectionsHome() {
                 .height(150.dp)
         )
         createCarouselFavorites(favoritesHome)
-        recyclerView_homeRest(storeList)
+        recyclerViewHomeRest(storesListFinal)
     }
 }
 

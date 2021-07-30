@@ -1,10 +1,9 @@
-package com.example.composefirstexample.homeRest
+package com.example.composefirstexample.rappi.homeRest
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Divider
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -17,8 +16,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.composefirstexample.R
-import com.example.composefirstexample.data.favoritesHome
-import com.example.composefirstexample.model.FavoritesModel
+import com.example.composefirstexample.rappi.data.favoritesHome
+import com.example.composefirstexample.rappi.model.FavoritesModel
 
 @Composable
 fun itemFavorite(favorite: FavoritesModel){

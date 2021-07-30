@@ -1,8 +1,8 @@
-package com.example.composefirstexample.data
+package com.example.composefirstexample.rappi.data
 
 import com.example.composefirstexample.R
-import com.example.composefirstexample.model.FavoritesModel
-import com.example.composefirstexample.model.StoreModel
+import com.example.composefirstexample.rappi.model.FavoritesModel
+import com.example.composefirstexample.rappi.model.StoreModel
 
 val storesListFinal = mutableListOf(
     StoreModel(
@@ -50,15 +50,4 @@ val favoritesHome = mutableListOf(
     FavoritesModel("Oma Cafe", R.drawable.copa),
     FavoritesModel("El kiosco", R.drawable.cafe),
     FavoritesModel("Pan pa ya", R.drawable.ellegado),
-    FavoritesModel("Starbucks", R.drawable.gourmet),
-    FavoritesModel("McDonald", R.drawable.home),
-    FavoritesModel("Oma Cafe", R.drawable.copa),
-    FavoritesModel("El kiosco", R.drawable.cafe),
-    FavoritesModel("Pan pa ya", R.drawable.ellegado),
-    FavoritesModel("Starbucks", R.drawable.gourmet),
-    FavoritesModel("McDonald", R.drawable.home),
-    FavoritesModel("Oma Cafe", R.drawable.copa),
-    FavoritesModel("El kiosco", R.drawable.cafe),
-    FavoritesModel("Pan pa ya", R.drawable.ellegado),
-    FavoritesModel("Starbucks", R.drawable.gourmet)
 )

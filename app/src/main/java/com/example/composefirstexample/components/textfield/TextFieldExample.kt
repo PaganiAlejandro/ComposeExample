@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.dp
  */
 
 @Composable
-fun TextFieldDemo(){
+fun TextFieldExample(){
     val text = remember { mutableStateOf(TextFieldValue("")) }
     TextField(
             modifier = Modifier.fillMaxWidth().padding(16.dp),
@@ -34,5 +34,5 @@ fun TextFieldDemo(){
 @Preview(showBackground = true)
 @Composable
 private fun TextFieldPreview(){
-    TextFieldDemo()
+    TextFieldExample()
 }
